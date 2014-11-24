@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>jQuery.targetBlank.jsのデモページ</title>
+    <!-- jQueryの読み込み -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript" charset="UTF-8"></script>
+    <!-- jQuery.targetBlank.jsの読み込み -->
+    <script src="jQuery.targetBlank.js"></script>
+    <!-- 起動・設定コード -->
+    <script type="text/javascript">
+        $(function(){
+            $("body").targetBlank({
+                outLinkOnly : "true", // 内部リンクに付加されたtarget="_blank"を取り除くかどうか
+            });
+        })
+    </script>
+</head>
+<body>
+    <header class="page-header container">
+        <h1>リンク先のページ</h1>
+    </header>
+    <main class="container">
+        <h2>下のリンクをクリックして前のページに戻って下さい</h2>
+        <a href="../index.html">前のページに戻る</a>
+    </main>
+</body>
+</html>
