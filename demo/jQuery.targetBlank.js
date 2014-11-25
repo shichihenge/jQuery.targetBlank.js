@@ -7,6 +7,7 @@ Version: 1.0
 $.fn.targetBlank = function(options){
 	options = $.extend({
 		outLinkOnly  : "true", // 内部リンクに付加されたtarget="_blank"を取り除くかどうか
+		noTabDomain  : "", // タブ開閉させないドメイン
 	}, options);
 
 	return this.each(function(){
@@ -20,13 +21,11 @@ $.fn.targetBlank = function(options){
 			var thisElement = $(this);
 			var address = thisElement.attr("href");
 			var index = address.indexOf("http://");
-			var thisDomain = location.hostname;
-			var domainCheck = address.indexOf(thisDomain);
+			var noTabCheck = address.indexOf(options.noTabDomain);
+			var domainCheck = address.indexOf(location.hostname);
 
-			if (index != -1) {
-				if (domainCheck == -1) {
-					$(thisElement).attr("target", "_blank");
-				} else {}
+			if (index != -1 && noTabCheck == -1 && domainCheck == -1) {
+				$(thisElement).attr("target", "_blank");
 			} else {}
 	  });
 

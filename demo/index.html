@@ -20,6 +20,7 @@
         $(function(){
             $("body").targetBlank({
                 outLinkOnly : "true", // 内部リンクに付加されたtarget="_blank"を取り除くかどうか
+                noTabDomain  : "google.com", // タブ開閉させないドメイン
             });
         })
     </script>
@@ -33,23 +34,28 @@
     <main class="container">
         <section>
             <h2>外部サイトへのリンク</h2>
-            <p>外部サイトへのリンクの場合、外部タブで開く</p>
+            <p>外部サイトへのリンクの場合、タブで開く</p>
             <a href="http://www.yahoo.co.jp/" class="btn btn-primary">外部サイトリンク(Yahoo)</a>
         </section>
         <section>
             <h2>絶対パスによるサイト内リンク</h2>
-            <p>絶対パスによるサイト内リンクの場合、外部タブで開かない</p> 
+            <p>絶対パスによるサイト内リンクの場合、タブで開かれない</p> 
             <a href="http://jquery.shichihenge.com/targetblank/under/index.html" class="btn btn-primary">サイト内リンク</a>
         </section>
         <section>
             <h2>相対パスによるサイト内リンク</h2>
-            <p>相対パスによるサイト内リンクの場合、外部タブで開かない</p>
+            <p>相対パスによるサイト内リンクの場合、タブで開かれない</p>
             <a href="under/index.html" class="btn btn-primary">サイト内リンク</a>
         </section>
         <section>
             <h2>target="_blank"が付与されたサイト内リンク</h2>
-            <p>サイト内リンクでhtmlにtarget="_blank"が付与されている場合は、target="blank"を取り除き、外部タブで開かない。</p>
+            <p>サイト内リンクでhtmlにtarget="_blank"が付与されている場合は、target="blank"を取り除き、タブで開かれない。</p>
             <a href="http://jquery.shichihenge.com/targetblank/under/index.html" target="_blank" class="btn btn-primary">サイト内リンク</a>
+        </section>
+        <section>
+            <h2>外部サイトへのリンク(タブで開かないように設定)</h2>
+            <p>起動コード内の設定で、google.comをタブで開かないように設定済みのため、タブで開かれない。</p>
+            <a href="http://google.com" class="btn btn-primary">外部サイトリンク(Google)</a>
         </section>
     </main>
 </body>
